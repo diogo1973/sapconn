@@ -1,0 +1,33 @@
+package pt.ulht.tfc.sapconn.domain;
+
+class SapConnManager;
+
+class Customer {
+	String customer_id;
+	String name;
+	String street;
+	String postal_code;
+	String location;
+	String company_code;
+}
+
+class SalesOrder {
+	String doc_number;
+	String doc_date;
+	String customer_id;
+}
+	
+class Recipe {
+	String title;
+	String problem;
+	String solution;
+	String author;
+	String tags;
+	DateTime creationTimestamp;
+}
+
+relation SapConnManagerHasManyRecipes {
+	SapConnManager playsRole sapconnManager { multiplicity 1..1; }
+	Recipe playsRole  recipe { multiplicity 0..*; }
+
+}
